@@ -1,7 +1,17 @@
 import React from "react";
 
-const Logout = ()=> {
-    return(<div></div>);
+export default class Logout extends React.Component {
+    componentDidMount() {
+        localStorage.clear();
+        setTimeout(()=> {
+            this.props.history.push("/login")
+        },200)
+    }
+   render() {
+    return (
+        <div>
+            ...Loggin Out
+        </div>
+    )
+   } 
 }
-
-export default Logout;

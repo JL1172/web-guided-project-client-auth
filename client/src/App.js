@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import GasPrices from './components/GasPrices';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -21,10 +22,10 @@ function App() {
           </li>
         </ul>
         <Switch>
-          <Route exact path="/protected" component={GasPrices} />
+          <PrivateRoute exact path="/protected" component={GasPrices} />
           <Route path="/logout" component={Logout} />
           <Route path="/login" component={Login} />
-          <Route path="/" component={Login} />    
+          <Route path="/" component={Login} />
         </Switch>
       </div>
     </Router>
